@@ -210,18 +210,8 @@ footer{font-size:12px;color:var(--muted);display:grid;gap:4px;border-top:1px sol
 
 <section id="d17">
   <h2>O 17º colocado</h2>
-  <div class="two">
-    <div>
-      <table id="dec"></table>
-      <p class="note">2013: Portuguesa em 17º após perder 4 pontos no STJD; em campo, o Fluminense. 2018: Sport pela tabela da época. Voltou = estava na Série A no ano seguinte.</p>
-    </div>
-    <div>
-      <h3>O primeiro rebaixado é pior lá fora?</h3>
-      <table id="merit"></table>
-      <p class="note">Aproveitamento médio do primeiro clube na zona (o 17º no Brasil), 2006/07–2025/26. Alemanha e França: posição do playoff.</p>
-      <p class="note">Distância média entre o último salvo e o primeiro rebaixado no Brasil: 1,7 ponto; em 11 das 20 edições foi de 0 ou 1. Metade dos 12 rebaixamentos do G12 saiu da 17ª posição.</p>
-    </div>
-  </div>
+  <table id="dec"></table>
+  <p class="note">2013: Portuguesa em 17º após perder 4 pontos no STJD; em campo, o Fluminense. 2018: Sport pela tabela da época. Voltou = estava na Série A no ano seguinte. Metade dos 12 rebaixamentos do G12 saiu da 17ª posição.</p>
 </section>
 
 <footer>
@@ -267,7 +257,6 @@ const EU=[["ESP","LaLiga",17,20,3.60,6,20],["BR","Brasileirão com Z4",19,20,T.z
  ["BR","Brasileirão com Z3",15,20,T.z3/20,7,20,"br3"],["GER","Bundesliga",15,20,2.35,5,20],["ITA","Serie A",14,20,2.05,4,20],["ENG","Premier League",13,20,1.85,7,20]];
 const PROM=[["ENG","Premier League",26,57],["ITA","Serie A",24,57],["FRA","Ligue 1",19,52],["BR","Brasileirão",25,76,"br"],["GER","Bundesliga",14,43],["ESP","LaLiga",17,57]];
 const SURV=[["ESP","LaLiga",70,56,45],["GER","Bundesliga",67,44,44],["ENG","Premier League",54,43,39],["FRA","Ligue 1",63,51,37],["ITA","Serie A",58,50,33],["BR","Brasileirão",67,47,32,"br"]];
-const MERIT=[["BR","Brasileirão: 17º",36.5,"br"],["BR","Brasileirão: 18º (com 3)",34.2,"br3"],["ESP","LaLiga",32.9],["FRA","Ligue 1",32.5],["GER","Bundesliga",31.4],["ITA","Serie A",30.1],["ENG","Premier League",29.6]];
 const REGRAS=[["BR","Brasileirão",20,4,"Não","1º e 2º + playoff 3º–6º (2 vagas)"],["ENG","Premier League",20,3,"Não","1º e 2º + playoff 3º–6º"],
  ["ESP","LaLiga",20,3,"Não","1º e 2º + playoff 3º–6º"],["ITA","Serie A",20,3,"Só em empate de pontos no 17º/18º","1º e 2º + playoff 3º–8º"],
  ["GER","Bundesliga",18,2,"16º x 3º da 2ª divisão, ida e volta","1º e 2º (3º vai ao playoff)"],["FRA","Ligue 1",18,2,"16º x vencedor do playoff 3º–5º da 2ª","1º e 2º (3º–5º vão ao playoff)"]];
@@ -361,9 +350,6 @@ tabela($("#perfil"),[
   {t:"2ª temp.",num:1,v:r=>r[2][0]/r[2][1],h:r=>fr(r[2])},
   {t:"3ª temp.",num:1,v:r=>r[3][0]/r[3][1],h:r=>fr(r[3])},
   {t:"4ª temp.",num:1,v:r=>r[4][0]/r[4][1],h:r=>`<b>${fr(r[4])}</b>`}],DADOS.perfil,r=>r[0]==="Os demais"?"br":"");
-tabela($("#merit"),[
-  {t:"Liga",v:r=>r[1],h:r=>liga(r[0],r[1]),cls:"lg"},
-  {t:"Aproveitamento",num:1,v:r=>r[2],h:r=>`<span class="meter" style="width:${r[2]*2}px"></span>${dec(r[2],1)}%`}],MERIT,cls);
 tabela($("#dec"),[
   {t:"Ano",num:1,v:r=>r[0],h:r=>r[0]},
   {t:"17º colocado",v:r=>r[1],h:r=>chip(r[1],r[3]?"g12":"")},
